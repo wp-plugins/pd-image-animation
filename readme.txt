@@ -1,8 +1,8 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 1.0.0
+Version: 1.1.0
 Tags: public, domain, image, gif, animation, sidebar, widget, admin, plugin, karma
-Requires at least: 2.5
+Requires at least: 2.0
 Tested up to: 2.5
 Stable tag: trunk
 
@@ -24,9 +24,22 @@ Features:
 == Installation ==
 
 1. Download the plugin
-2. Unpack the package to wp-content/plugins/ directory
-3. Activate the plugin
-4. Go to [Presentation] > [Widgets] and add the widget to the sidebar.
+2. Unpack the package to "wordpress/wp-content/plugins/" directory
+3. Activate the plugin in section [Plugins] of your admin interface
+4. Go to [Design] > [Widgets] and add the widget to the sidebar.
+
+
+== Frequently Asked Questions ==
+
+= Can I use the plugin without widgets support? =
+
+Yes, just add the following line to your sidebar template (see wordpress/wp-content/themes/<mytheme>/sidebar.php):
+
+`<li><?php $anim = new PDImageAnimation(); $anim->display_sidebar_widget(); ?></li>`
+
+before
+
+`</ul>`
 
 
 == Screenshots ==

@@ -3,12 +3,11 @@
 Plugin Name: PDImageAnimation
 Plugin URI: http://www.slideshine.de/11667
 Description: Displays GIF animations of public domain images from the online slideshow site slideshine.de.
-Version: 1.0.0
+Version: 1.1.0
 Author: mfard
 Author URI: http://www.slideshine.de/11667
 */
-
-require_once(dirname(__FILE__) . '/php/PDImageAnimation.php');
+require_once(dirname(__FILE__) . '/php/PDImageAnimation.php');
 $anim = new PDImageAnimation();
 add_action('activate_pd-image-animation/PDImageAnimation.php',array(&$anim, 'activate'));
 if (!function_exists("PDImageAnimation_ap")) { 

@@ -5,7 +5,7 @@ class KarmaDataProvider {
 	public function __construct($lang = null) {
 		$this->_language = ($lang === null ? 'en' : $lang);
 	}
-		public function getJsonData() {
+	public function getJsonData() {
 		$url = self::JSON_URL;
 		$data=json_decode(file_get_contents($url), true);
 		return $data;
