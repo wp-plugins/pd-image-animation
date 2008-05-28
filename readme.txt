@@ -1,16 +1,16 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 1.1.0
-Tags: public, domain, image, gif, animation, sidebar, widget, admin, plugin, karma
+Version: 1.2.0
+Tags: public, domain, image, thumbnail, gif, animation, sidebar, widget, admin, plugin, karma
 Requires at least: 2.0
 Tested up to: 2.5
 Stable tag: trunk
 
-Displays GIF animations of public domain images from the online slideshow site slideshine.de.
+Displays thumbnails and GIF animations of public domain images from the online slideshow site slideshine.de.
 
 == Description ==
 
-PDImageAnimation displays animations of new public domain images from the slideshow community site slideshine.de. 
+PDImageAnimation displays thumbnails and animations of new public domain images from the slideshow community site slideshine.de. Different modes are supported.
 
 Furthermore it provides some information about the author (such as a karma bar) of the corresponding slideshow.
 
@@ -18,7 +18,7 @@ Features:
 
 * daily new and free (public-domain) images
 * sidebar widget
-* easy to integrate
+* simple integration
 
 
 == Installation ==

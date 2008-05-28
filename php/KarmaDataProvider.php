@@ -1,11 +1,14 @@
 <?php
 class KarmaDataProvider {
-	const JSON_URL = "http://www.slideshine.de/index.php?json=latestslideshow"; 
+	const JSON_URL = "http://www.slideshine.de/json/latestslideshow"; 
+	const MODE_IMAGE = 0;
+	const MODE_ANIMATION = 1;
+	const MODE_IMAGE_ANIMATION = 2;
 	private $_language;
 	public function __construct($lang = null) {
 		$this->_language = ($lang === null ? 'en' : $lang);
 	}
-	public function getJsonData() {
+		public function getJsonData() {
 		$url = self::JSON_URL;
 		$data=json_decode(file_get_contents($url), true);
 		return $data;
@@ -36,12 +39,17 @@ class KarmaDataProvider {
 		);
 		return $locs[$this->_language][$key];
 	}
-	public function getHtml() {
+	public function getHtml($mode) {
 		$data = $this->getJsonData();
-		$result = $this->constructHtml($data);
+		$result = $this->constructHtml($data, $mode);
 		return $result;
 	}
-	private function constructHtml($data, $imgStyle = 'border: 1px solid silver;', $statsStyle = 'margin-top: 10px;', $ulStyle = 'list-style-type: none; margin: 0px; padding: 0px;', $liStyle = 'list-style-type: none;') {
+	private function constructHtml(&$data, $mode) {
+		$aStyle = 'text-decoration: none;';
+		$imgStyle = 'border: 1px solid silver;';
+		$statsStyle = 'margin-top: 10px;';
+		$ulStyle = 'list-style-type: none; margin: 0px; padding: 0px;';
+		$liStyle = 'list-style-type: none;';
 		$title = $data['title'];
 		if (strlen($title) > 20) {
 			$title = substr($title, 0, 20) . '...';
@@ -51,12 +59,8 @@ class KarmaDataProvider {
 			$author = substr($author, 0, 15) . '...';
 		}
 		return '
-		<a href="' . $data['slideshowUrl'] . '" target="_blank">
-			<img src="' . $data['gifUrl'] . '" 
-				style="' . $imgStyle . '" 
-				alt="' . $data['title'] . '"
-				title="' . $data['title'] . '"
-			/>
+		<a style="'. $aStyle . '"href="' . $data['slideshowUrl'] . '" target="_blank">
+			' . $this->constructImage($data, $mode) . '
 		</a>
 		<div>
 			<div>
@@ -81,5 +85,36 @@ class KarmaDataProvider {
 		</div>
   		';
   	}
+	private function constructImage(&$data, $mode) {
+		$img = '';
+		switch ($mode) {
+			case self::MODE_IMAGE:
+				$img = '<img src="' . $data['thumbnailUrl'] . '" 
+						style="' . $imgStyle . '" 
+						alt="' . $data['title'] . '"
+						title="' . $data['title'] . '"
+					/>';
+				break;
+			case self::MODE_IMAGE_ANIMATION:
+				$img = '<img src="' . $data['thumbnailUrl'] . '" 
+						style="' . $imgStyle . '" 
+						alt="' . $data['title'] . '"
+						title="' . $data['title'] . '"
+						onmouseover="this.src=\'' . $data['gifUrl'] . '\'" 
+						onmouseout="this.src=\'' . $data['thumbnailUrl'] . '\'"
+					/>';
+				break;
+			case self::MODE_ANIMATION:
+				$img = '<img src="' . $data['gifUrl'] . '" 
+						style="' . $imgStyle . '" 
+						alt="' . $data['title'] . '"
+						title="' . $data['title'] . '"
+					/>';
+				break;
+			default:
+				$img = '';
+		}
+		return $img;
+	}
 }
 ?>
