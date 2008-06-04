@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 1.2.0
+Version: 1.3.0
 Tags: public, domain, image, thumbnail, gif, animation, sidebar, widget, admin, plugin, karma
 Requires at least: 2.0
 Tested up to: 2.5
@@ -19,6 +19,7 @@ Features:
 * daily new and free (public-domain) images
 * sidebar widget
 * simple integration
+* support for different languages
 
 
 == Installation ==
@@ -40,6 +41,10 @@ Yes, just add the following line to your sidebar template (see wordpress/wp-cont
 before
 
 `</ul>`
+
+= What languages are supported currently? =
+
+english and german
 
 
 == Screenshots ==
