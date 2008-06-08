@@ -10,7 +10,8 @@ class KarmaDataProvider {
 	}
 		public function getJsonData() {
 		$url = self::JSON_URL;
-		$data=json_decode(file_get_contents($url), true);
+		$json = @file_get_contents($url);
+		$data=json_decode($json, true);
 		return $data;
 	}
 	public function getKarmaBar($karma) {
@@ -33,9 +34,17 @@ class KarmaDataProvider {
 			'comments' => 'Kommentare',
 			'karma' => 'Karma',
 		);
+		$es = array(
+			'author' => 'Autor',
+			'slideshows' => 'Slideshows',
+			'images' => 'Imagenes',
+			'comments' => 'Comentarios',
+			'karma' => 'Karma',
+		);
 		$locs = array(
 			'en' => $en,
 			'de' => $de,
+			'es' => $es
 		);
 		return $locs[$this->_language][$key];
 	}

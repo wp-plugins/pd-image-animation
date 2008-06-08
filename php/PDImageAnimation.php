@@ -96,6 +96,7 @@ class PDImageAnimation {
 				<select id="' . self::PROP_LANG . '" name="' . self::PROP_LANG . '">
 					' . $this->constructOption(PDIATranslator::LANG_EN, 'english', $lang) . '
 					' . $this->constructOption(PDIATranslator::LANG_DE, 'deutsch', $lang) . '
+					' . $this->constructOption(PDIATranslator::LANG_ES, 'espanol', $lang) . '
 				</select>
 				</label></p>
 				<!-- update switch -->
