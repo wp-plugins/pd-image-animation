@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 1.3.1
+Version: 1.4.0
 Tags: public, domain, image, thumbnail, gif, animation, sidebar, widget, admin, plugin, karma
 Requires at least: 2.0
 Tested up to: 2.5

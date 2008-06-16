@@ -1,5 +1,7 @@
 <?php
 require_once(dirname(__FILE__) . '/KarmaDataProvider.php');
+require_once(dirname(__FILE__) . '/KarmaDataTranslator.php');
+require_once(dirname(__FILE__) . '/KarmaDataRenderer.php');
 require_once(dirname(__FILE__) . '/PDIATranslator.php');
 class PDImageAnimation {
 	const OPTION_NAME = 'PDImageAnimationOptions';
@@ -43,11 +45,13 @@ class PDImageAnimation {
 		$title = $options['title'];
 		$mode = $options['mode'];
 		$lang = $options['lang'];
-		$karma_data = new KarmaDataProvider($lang);
+		$karma_data = KarmaDataProvider::getInstance()->getJsonData();
+		$translator = new KarmaDataTranslator($lang);
+		$renderer = new KarmaDataRenderer($translator, $mode);
 		echo 
 			'<h3 style="text-align: right; margin-bottom: 10px;">' . $title . '</h3>' . 
 			'<div style="text-align: right;">' .
-			$karma_data->getHtml($mode) .
+				$renderer->constructHtml($karma_data) .
 			'</div>';
 	}
 	public function display_widget_control() {
