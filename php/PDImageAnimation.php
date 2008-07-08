@@ -1,8 +1,7 @@
 <?php
-require_once(dirname(__FILE__) . '/KarmaDataProvider.php');
-require_once(dirname(__FILE__) . '/KarmaDataTranslator.php');
-require_once(dirname(__FILE__) . '/KarmaDataRenderer.php');
-require_once(dirname(__FILE__) . '/PDIATranslator.php');
+require_once(dirname(__FILE__) . '/karma-data/KarmaDataProvider.php');
+require_once(dirname(__FILE__) . '/karma-data/KarmaDataTranslator.php');
+require_once(dirname(__FILE__) . '/karma-data/KarmaDataRenderer.php');
 class PDImageAnimation {
 	const OPTION_NAME = 'PDImageAnimationOptions';
 	const UPDATE_NAME = 'pdimageanimation-submit';
@@ -20,16 +19,11 @@ class PDImageAnimation {
 	function load() {
 		register_sidebar_widget('PDImageAnimation', array(&$this, 'display_sidebar_widget'));
 	}
-	private function loc($key) {
-		$lang = PDIATranslator::getInstance();
-		$lang->setLanguage(PDIATranslator::LANG_EN);
-		return $lang->loc($key);
-	}
 	public function get_admin_options() {
 		$options = array(
-			'title'=>$this->loc('frontend.title'),
+			'title'=>'',
 			'mode'=>self::MODE_IMAGE_ANIMATION,
-			'lang'=>PDIATranslator::LANG_EN,
+			'lang'=>KarmaDataTranslator::LANG_EN,
 		);
 		$opts = get_option(self::OPTION_NAME);
 		if (!empty($opts)) {
@@ -57,18 +51,28 @@ class PDImageAnimation {
 	public function display_widget_control() {
 		$options = $this->get_admin_options();
 		$title = $options['title'];
-		echo '<p><label for="' . self::PROP_TITLE . '">Title: <input id="' . self::PROP_TITLE . '" name="' . self::PROP_TITLE . '" type="text" value="'.$title.'" /></label></p>';
+		$translator = new KarmaDataTranslator($options['lang']);
+		echo '
+			<p>
+				<label for="' . self::PROP_TITLE . '">
+				' . $translator->loc('backend.fieldlabel.title') . ': 
+				<input id="' . self::PROP_TITLE . '" name="' . self::PROP_TITLE . '" type="text" value="'.$title.'" />
+				</label>
+			</p>
+		';
 		echo '<input type="hidden" id="' . self::UPDATE_NAME . '" name="' . self::UPDATE_NAME . '" value="1" />';
 	}
 	public function display_admin_page() {
 		$options = $this->get_admin_options();
+		$translator = new KarmaDataTranslator($options['lang']);
 		if ( $_POST[self::UPDATE_NAME] !== null ) {
 			$options['title'] = $_POST[self::PROP_TITLE];
 			$options['mode'] = $_POST[self::PROP_MODE];
 			$options['lang'] = $_POST[self::PROP_LANG];
+			$translator->setLanguage($options['lang']);
 			echo '
 			<div class="updated">
-				<p><strong>' . $this->loc('admin_page.updated') . '</strong></p>
+				<p><strong>' . $translator->loc('backend.updated') . '</strong></p>
 				<!--
 				Title: ' . $options['title'] . '<br />
 				Mode: ' . $options['mode'] . '<br />
@@ -84,29 +88,36 @@ class PDImageAnimation {
 		echo '
 			<div class="wrap"> 
 				<form name="form1" method="post" action="' . $_SERVER['REQUEST_URI'] . '">
-				<h2>' . $this->loc('admin_page.title') . '</h2> 
+				<h2>' . $translator->loc('backend.title') . '</h2> 
 				<!-- title -->
-				<p><label for="' . self::PROP_TITLE . '">Title:<br /><input id="' . self::PROP_TITLE . '" name="' . self::PROP_TITLE . '" type="text" value="'.$title.'" /></label></p>
+				<p>
+					<label for="' . self::PROP_TITLE . '">
+					' . $translator->loc('backend.fieldlabel.title') . ':<br />
+					<input id="' . self::PROP_TITLE . '" name="' . self::PROP_TITLE . '" type="text" value="'.$title.'" />
+					</label>
+				</p>
 				<!-- mode -->
-				<p><label for="' . self::PROP_MODE . '">Mode:<br />
+				<p><label for="' . self::PROP_MODE . '">
+				' . $translator->loc('backend.fieldlabel.mode') . ': <br />
 				<select id="' . self::PROP_MODE . '" name="' . self::PROP_MODE . '">
-					' . $this->constructOption(self::MODE_IMAGE, 'Image only', $mode) . '
-					' . $this->constructOption(self::MODE_ANIMATION, 'GIF-Animation only', $mode) . '
-					' . $this->constructOption(self::MODE_IMAGE_ANIMATION, 'Image and GIF-Animation (onmouseover effect)', $mode) . '
+					' . $this->constructOption(self::MODE_IMAGE, $translator->loc('backend.fieldlabel.image-mode'), $mode) . '
+					' . $this->constructOption(self::MODE_ANIMATION, $translator->loc('backend.fieldlabel.animation-mode'), $mode) . '
+					' . $this->constructOption(self::MODE_IMAGE_ANIMATION, $translator->loc('backend.fieldlabel.image-animation-mode'), $mode) . '
 				</select>
 				</label></p>
 				<!-- lang -->
-				<p><label for="' . self::PROP_LANG . '">Language:<br />
+				<p><label for="' . self::PROP_LANG . '">
+				' . $translator->loc('backend.fieldlabel.language') . ':<br />
 				<select id="' . self::PROP_LANG . '" name="' . self::PROP_LANG . '">
-					' . $this->constructOption(PDIATranslator::LANG_EN, 'english', $lang) . '
-					' . $this->constructOption(PDIATranslator::LANG_DE, 'deutsch', $lang) . '
-					' . $this->constructOption(PDIATranslator::LANG_ES, 'espanol', $lang) . '
+					' . $this->constructOption(KarmaDataTranslator::LANG_EN, $translator->loc('backend.fieldlabel.english'), $lang) . '
+					' . $this->constructOption(KarmaDataTranslator::LANG_DE, $translator->loc('backend.fieldlabel.german'), $lang) . '
+					' . $this->constructOption(KarmaDataTranslator::LANG_ES, $translator->loc('backend.fieldlabel.spanish'), $lang) . '
 				</select>
 				</label></p>
 				<!-- update switch -->
 				<input type="hidden" id="' . self::UPDATE_NAME . '" name="' . self::UPDATE_NAME . '" value="1" />				
 				<p class="submit">
-					<input type="submit" name="submit" value="' . $this->loc('admin_page.save') . ' &raquo;" />
+					<input type="submit" name="submit" value="' . $translator->loc('backend.save') . ' &raquo;" />
 				</p>
 				</form>
 			</div>
