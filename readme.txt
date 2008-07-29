@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 1.5.0
+Version: 1.5.1
 Tags: public, domain, image, thumbnail, gif, animation, sidebar, widget, admin, plugin, karma
 Requires at least: 2.0
 Tested up to: 2.5
@@ -21,7 +21,12 @@ Features:
 * simple integration
 * support for different languages (english, german, spanish)
 
-New in this version:
+New in version 1.5.1:
+
+* Automatic language determination implemented
+* usage of wordpress localization api to get locale settings
+
+New in version 1.5.0:
 
 * internationalization enhanced
 * complete backend localization

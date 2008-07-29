@@ -23,7 +23,7 @@ class PDImageAnimation {
 		$options = array(
 			'title'=>'',
 			'mode'=>self::MODE_IMAGE_ANIMATION,
-			'lang'=>KarmaDataTranslator::LANG_EN,
+			'lang'=>$this->getWpLocale(),
 		);
 		$opts = get_option(self::OPTION_NAME);
 		if (!empty($opts)) {
@@ -109,6 +109,7 @@ class PDImageAnimation {
 				<p><label for="' . self::PROP_LANG . '">
 				' . $translator->loc('backend.fieldlabel.language') . ':<br />
 				<select id="' . self::PROP_LANG . '" name="' . self::PROP_LANG . '">
+					' . $this->constructOption($this->getWpLocale(), $translator->loc('backend.fieldlabel.default'), $lang) . '
 					' . $this->constructOption(KarmaDataTranslator::LANG_EN, $translator->loc('backend.fieldlabel.english'), $lang) . '
 					' . $this->constructOption(KarmaDataTranslator::LANG_DE, $translator->loc('backend.fieldlabel.german'), $lang) . '
 					' . $this->constructOption(KarmaDataTranslator::LANG_ES, $translator->loc('backend.fieldlabel.spanish'), $lang) . '
@@ -126,6 +127,20 @@ class PDImageAnimation {
 	private function constructOption($value, $text, $mode) {
 		$selected = ($mode == $value ? 'selected' : '');
 		return '<option value="' . $value . '" ' . $selected . '>' . $text . '</option>';
+	}
+	private function getWpLocale() {
+		$wpLocale = get_locale();
+		$wpLocale = substr($wpLocale, 0, 2);
+		switch ($wpLocale) {
+			case KarmaDataTranslator::LANG_EN:
+			case KarmaDataTranslator::LANG_DE:
+			case KarmaDataTranslator::LANG_ES:
+				break;
+			default:
+				$wpLocale = KarmaDataTranslator::LANG_EN;
+				break;
+		}
+		return $wpLocale;
 	}
 }
 ?>
