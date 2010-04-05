@@ -1,12 +1,12 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 1.5.1
-Tags: public, domain, image, thumbnail, gif, animation, sidebar, widget, admin, plugin, karma
+Version: 2.0.0
+Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
 Requires at least: 2.0
-Tested up to: 2.5
+Tested up to: 2.9
 Stable tag: trunk
 
-Displays thumbnails and GIF animations of public domain images from the online slideshow site slideshine.de.
+This plugin/widget is the wordpress interface to your favourite photos, images and cliparts organized in slideshows at the Online-Slideshow-Community-site slideshine.de. It displays thumbnails and GIF animations of randomly selected slideshows, which you can specify in the settings page of this sidebar widget. Additionally to the slideshow images, information about authors (such as his/her karma) are shown.
 
 == Description ==
 
@@ -16,10 +16,21 @@ Furthermore it provides some information about the author (such as a karma bar) 
 
 Features:
 
-* daily new and free (public-domain) images
-* sidebar widget
+* nice looking sidebar widget
 * simple integration
+* high performance (due to internal caching of server requests and optimized algorithms))
+* supports different display modes
+* supports customization via CSS (see style.css)
 * support for different languages (english, german, spanish)
+
+New in version 2.0.0:
+
+* performance optimization (caching, optimized algorithms)
+* specification of favourite slideshows in control panel
+* random selection of slideshows from your slideshow collection
+* settings description in control panel
+* search engine optimized html output
+* many new settings/options (see [Admin Menu] -> [Settings] -> [PDImageAnimation])
 
 New in version 1.5.1:
 
@@ -37,9 +48,9 @@ New in version 1.5.0:
 
 1. Download the plugin
 2. Unpack the package to "wordpress/wp-content/plugins/" directory
-3. Activate the plugin in section [Plugins] of your admin interface
-4. Go to [Design] > [Widgets] and add the widget to the sidebar.
-
+3. Activate the plugin in [Admin Menu] -> [Plugins]
+4. Go to [Admin Menu] -> [Design] > [Widgets] and add the widget to the sidebar.
+5. (optional) Edit settings in [Admin Menu] -> [Settings] -> [PDImageAnimation]
 
 == Frequently Asked Questions ==
 
@@ -53,7 +64,7 @@ before
 
 `</ul>`
 
-= What languages are supported currently? =
+= Which languages are supported? =
 
 english, german and spanish
 

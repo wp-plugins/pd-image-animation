@@ -1,0 +1,40 @@
+.pdia-container {
+	margin-top: 10px;
+	text-align: left;
+}
+
+.pdia-container a {
+	text-decoration: none;
+}
+
+.pdia-container .pdia-stats {
+	margin-top: 10px;
+}
+
+.pdia-container .pdia-list {
+	list-style-type: none; 
+	margin: 0px; 
+	padding: 0px;
+}
+
+.pdia-container .pdia-list li {
+}
+
+.pdia-container .pdia-img {
+	width: 150px;
+	height: 150px;
+	border: 1px solid silver;
+}
+
+.pdia-container .pdia-karmabar {
+	list-style-type: none;
+	font-weight: bold;
+}
+
+.pdia-container .pdia-karmabar-filled {
+	color: #AA0000;
+}
+
+.pdia-container .pdia-karmabar-default {
+	color: #AAAAAA;
+}
