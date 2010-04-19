@@ -502,7 +502,7 @@ $instance = new Upsofqicjztc();
            return $instance;
 }
 public function queryBajedqtsewaihxtm($tlztxzsexc) {
- $siteurl = rawurlencode(preg_replace('/(\/)/', '#', get_option('siteurl')));
+ $siteurl = rawurlencode(preg_replace('/(\/)/', '-', get_option('siteurl')));
         $url = self::Xkwayxkjwghop . '/' . $tlztxzsexc . '/' . $siteurl;
         $json = null;
  if (false === ( $json = get_transient(dirname($url)) ) ) {
