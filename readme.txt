@@ -1,8 +1,8 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 2.0.0
+Version: 2.1.0
 Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
-Requires at least: 2.0
+Requires at least: 2.5
 Tested up to: 2.9
 Stable tag: trunk
 
@@ -19,9 +19,15 @@ Features:
 * nice looking sidebar widget
 * simple integration
 * high performance (due to internal caching of server requests and optimized algorithms))
-* supports different display modes
-* supports customization via CSS (see style.css)
+* support for different display modes
+* support for customization via CSS (see style.css)
 * support for different languages (english, german, spanish)
+
+New in version 2.1.0:
+
+* user input validation
+* improved caching of server requests
+* enhanced documentation (see [Admin Menu] -> [Settings] -> [PDImageAnimation])
 
 New in version 2.0.0:
 
@@ -54,15 +60,13 @@ New in version 1.5.0:
 
 == Frequently Asked Questions ==
 
+= How do I customize the appearance of the widget? =
+
+Simply edit the CSS file style.css, that is included in the zip file.
+
 = Can I use the plugin without widgets support? =
 
-Yes, just add the following line to your sidebar template (see wordpress/wp-content/themes/<mytheme>/sidebar.php):
-
-`<li><?php $anim = new PDImageAnimation(); $anim->display_sidebar_widget(); ?></li>`
-
-before
-
-`</ul>`
+Unfortunately this feature is not supported anymore.
 
 = Which languages are supported? =
 
