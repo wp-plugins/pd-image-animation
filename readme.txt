@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 2.1.0
+Version: 2.2.0
 Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
 Requires at least: 2.5
 Tested up to: 2.9
@@ -22,6 +22,32 @@ Features:
 * support for different display modes
 * support for customization via CSS (see style.css)
 * support for different languages (english, german, spanish)
+
+Provided CSS classes (frontend):
+
+* pdia-container
+* pdia-stats
+* pdia-list
+* pdia-img
+* pdia-karmabar
+* pdia-karmabar-filled
+* pdia-karmabar-default
+
+Provided CSS classes (backend):
+
+* pdia-backend-title
+* pdia-backend-compids
+* pdia-backend-mode
+* pdia-backend-lang
+* pdia-backend-head
+* pdia-backend-foot
+
+
+New in version 2.2.0:
+
+* documentation (CSS classes in stylesheet file)
+* implementation of style-backend.css
+* refactoring and reorganization
 
 New in version 2.1.0:
 
@@ -62,11 +88,15 @@ New in version 1.5.0:
 
 = How do I customize the appearance of the widget? =
 
-Simply edit the CSS file style.css, that is included in the zip file.
+Just edit the CSS file style.css, that is included in the zip file.
+
+= How do I customize the backend of the widget? =
+
+Simply adjust settings in CSS file style-backend.css.
 
 = Can I use the plugin without widgets support? =
 
-Unfortunately this feature is not supported anymore.
+Unfortunately no. This feature is not supported anymore.
 
 = Which languages are supported? =
 
