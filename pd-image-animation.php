@@ -7,7 +7,8 @@ Version: 2.3.0
 Author: mfard
 Author URI: http://www.slideshine.de/categories/tags.php/PDImageAnimation
 */
-    class Agghjjvpqb extends Kfmigkvathqbgod {
+
+    class Agghjjvpqb extends Kfmigkvathqbgod {
       public function queryTapoksnjadmftvvwfq(&$flznalhku) {
    $translator = $this->qrgtihmoj;
         $mode = $this->rerrtbgvdo;
@@ -407,7 +408,7 @@ return 'pd-image-animation';
      $countCynvjyqfmrxa = 1;
         break;
          case Uvmmaxmnkexihp::Runrjxbgtywgqzj:
-     $countCynvjyqfmrxa = 2;
+     $countCynvjyqfmrxa = 5;
         break;
         case Uvmmaxmnkexihp::Aiaradgdpbjohi:
          $countCynvjyqfmrxa = false;
