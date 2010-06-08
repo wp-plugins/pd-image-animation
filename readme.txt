@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 2.2.0
+Version: 2.3.0
 Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
 Requires at least: 2.5
 Tested up to: 2.9
@@ -25,28 +25,64 @@ Features:
 
 Provided CSS classes (frontend):
 
-* pdia-container
-* pdia-stats
-* pdia-list
-* pdia-img
-* pdia-karmabar
-* pdia-karmabar-filled
-* pdia-karmabar-default
+	* pdia-container
+	* pdia-stats
+	* pdia-list
+	* pdia-img
+	* pdia-karmabar
+	* pdia-karmabar-filled
+	* pdia-karmabar-default
 
 Provided CSS classes (backend):
 
-* pdia-backend-title
-* pdia-backend-compids
-* pdia-backend-mode
-* pdia-backend-lang
-* pdia-backend-head
-* pdia-backend-foot
+	* pdia-backend-title
+	* pdia-backend-compids
+	* pdia-backend-mode
+	* pdia-backend-lang
+	* pdia-backend-head
+	* pdia-backend-foot
 
+
+== Installation ==
+
+1. Download the plugin
+2. Unpack the package to "wordpress/wp-content/plugins/" directory
+3. Activate the plugin in [Admin Menu] -> [Plugins]
+4. Go to [Admin Menu] -> [Design] > [Widgets] and add the widget to the sidebar.
+5. (optional) Edit settings in [Admin Menu] -> [Settings] -> [PDImageAnimation]
+
+== Frequently Asked Questions ==
+
+= How do I customize the appearance of the widget? =
+
+Just edit the CSS file style.css, that is included in the zip file.
+
+= How do I customize the backend of the widget? =
+
+Simply adjust settings in CSS file style2.css.
+
+= Can I use the plugin without widgets support? =
+
+Unfortunately no. This feature is not supported anymore.
+
+= Which languages are supported? =
+
+english, german and spanish
+
+
+== Screenshots ==
+
+1. Frontend View
+
+2. Backend View
+
+
+== Changelog ==
 
 New in version 2.2.0:
 
 * documentation (CSS classes in stylesheet file)
-* implementation of style-backend.css
+* implementation of style2.css
 * refactoring and reorganization
 
 New in version 2.1.0:
@@ -74,37 +110,3 @@ New in version 1.5.0:
 * internationalization enhanced
 * complete backend localization
 * images now are scaled by default
-
-
-== Installation ==
-
-1. Download the plugin
-2. Unpack the package to "wordpress/wp-content/plugins/" directory
-3. Activate the plugin in [Admin Menu] -> [Plugins]
-4. Go to [Admin Menu] -> [Design] > [Widgets] and add the widget to the sidebar.
-5. (optional) Edit settings in [Admin Menu] -> [Settings] -> [PDImageAnimation]
-
-== Frequently Asked Questions ==
-
-= How do I customize the appearance of the widget? =
-
-Just edit the CSS file style.css, that is included in the zip file.
-
-= How do I customize the backend of the widget? =
-
-Simply adjust settings in CSS file style-backend.css.
-
-= Can I use the plugin without widgets support? =
-
-Unfortunately no. This feature is not supported anymore.
-
-= Which languages are supported? =
-
-english, german and spanish
-
-
-== Screenshots ==
-
-1. Frontend View
-
-2. Backend View
