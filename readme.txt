@@ -1,9 +1,9 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 2.3.0
+Version: 2.4.0
 Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
 Requires at least: 2.5
-Tested up to: 2.9
+Tested up to: 3.0
 Stable tag: trunk
 
 This plugin/widget is the wordpress interface to your favourite photos, images and cliparts organized in slideshows at the Online-Slideshow-Community-site slideshine.de. It displays thumbnails and GIF animations of randomly selected slideshows, which you can specify in the settings page of this sidebar widget. Additionally to the slideshow images, information about authors (such as his/her karma) are shown.
@@ -12,7 +12,9 @@ This plugin/widget is the wordpress interface to your favourite photos, images a
 
 PDImageAnimation displays thumbnails and animations of new public domain images from the slideshow community site slideshine.de. Different modes are supported.
 
-Furthermore it provides some information about the author (such as a karma bar) of the corresponding slideshow.
+Furthermore it provides some information about the author (such as a karma bar) of the corresponding slideshow. 
+
+The look and feel is highly customizable and can be changed by adjusting some of the provided CSS classes, that do exist for all visible elements such as labels, bar charts and images.
 
 Features:
 
@@ -22,25 +24,6 @@ Features:
 * support for different display modes
 * support for customization via CSS (see style.css)
 * support for different languages (english, german, spanish)
-
-Provided CSS classes (frontend):
-
-	* pdia-container
-	* pdia-stats
-	* pdia-list
-	* pdia-img
-	* pdia-karmabar
-	* pdia-karmabar-filled
-	* pdia-karmabar-default
-
-Provided CSS classes (backend):
-
-	* pdia-backend-title
-	* pdia-backend-compids
-	* pdia-backend-mode
-	* pdia-backend-lang
-	* pdia-backend-head
-	* pdia-backend-foot
 
 
 == Installation ==
@@ -72,41 +55,4 @@ english, german and spanish
 
 == Screenshots ==
 
-1. Frontend View
-
-2. Backend View
-
-
-== Changelog ==
-
-New in version 2.2.0:
-
-* documentation (CSS classes in stylesheet file)
-* implementation of style2.css
-* refactoring and reorganization
-
-New in version 2.1.0:
-
-* user input validation
-* improved caching of server requests
-* enhanced documentation (see [Admin Menu] -> [Settings] -> [PDImageAnimation])
-
-New in version 2.0.0:
-
-* performance optimization (caching, optimized algorithms)
-* specification of favourite slideshows in control panel
-* random selection of slideshows from your slideshow collection
-* settings description in control panel
-* search engine optimized html output
-* many new settings/options (see [Admin Menu] -> [Settings] -> [PDImageAnimation])
-
-New in version 1.5.1:
-
-* Automatic language determination implemented
-* usage of wordpress localization api to get locale settings
-
-New in version 1.5.0:
-
-* internationalization enhanced
-* complete backend localization
-* images now are scaled by default
+1. Animated photo slideshow at the frontend
