@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 2.4.0
+Version: 2.5.0
 Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
 Requires at least: 2.5
 Tested up to: 3.0
@@ -10,9 +10,9 @@ This plugin/widget is the wordpress interface to your favourite photos, images a
 
 == Description ==
 
-PDImageAnimation displays thumbnails and animations of new public domain images from the slideshow community site slideshine.de. Different modes are supported.
+PDImageAnimation displays thumbnails and animations of new freely available open-content images from the slideshow community site slideshine.de. Different view modes are supported.
 
-Furthermore it provides some information about the author (such as a karma bar) of the corresponding slideshow. 
+Furthermore it provides some information about the author and statistics for the corresponding slideshow. 
 
 The look and feel is highly customizable and can be changed by adjusting some of the provided CSS classes, that do exist for all visible elements such as labels, bar charts and images.
 
