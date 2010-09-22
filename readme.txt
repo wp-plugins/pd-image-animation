@@ -1,6 +1,6 @@
 === PDImageAnimation ===
 Contributors: mfard
-Version: 2.5.0
+Version: 2.6.0
 Tags: photo, photo-story, gif, animation, gallery, collection, slideshow, image, thumbnail, preview, sidebar, widget, plugin, gadget, karma
 Requires at least: 2.5
 Tested up to: 3.0
@@ -24,6 +24,8 @@ Features:
 * support for different display modes
 * support for customization via CSS (see style.css)
 * support for different languages (english, german, spanish)
+
+See also: [PDImageAnimation Slideshow](http://www.slideshine.de/categories/tags.php/PDImageAnimation)
 
 
 == Installation ==
